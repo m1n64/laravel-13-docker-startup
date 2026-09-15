@@ -21,10 +21,6 @@ A Docker-based project template for **Laravel 13** with **PHP 8.5**, built aroun
 - **Docker + Docker Compose**
 - **Xdebug** in dev mode
 
-## Philosophy
-
-This template embraces explicit, strictly typed, and highly testable code. It is purpose-built for API-first architectures and microservices, prioritizing long-term maintainability, clear separation of concerns, and predictable data flow.
-
 ## Architecture
 
 Core code lives in `app/` and follows **Clean Architecture**:
@@ -42,6 +38,10 @@ Core code lives in `app/` and follows **Clean Architecture**:
 - Controllers are auto-discovered in `app/Transport/Http/Controller` with `api/` prefix and `api` middleware
 - OpenAPI documentation classes in `app/Transport/Http/Doc/`
 - JSON-only API error responses
+
+### Philosophy
+
+This template embraces explicit, strictly typed, and highly testable code. It is purpose-built for API-first architectures and microservices, prioritizing long-term maintainability, clear separation of concerns, and predictable data flow.
 
 ## Packages & Features
 
