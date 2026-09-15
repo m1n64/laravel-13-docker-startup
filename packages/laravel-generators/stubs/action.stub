@@ -1,0 +1,25 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DummyNamespace;
+
+/**
+ * DummyClass action.
+ */
+final class DummyClass
+{
+    /**
+     * Initializes a new instance of the DummyClass class.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * Executes the action.
+     */
+    public function __invoke(): void
+    {
+    }
+}

@@ -1,0 +1,49 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+            target: prod
+            args:
+                WWWUSER: ${WWWUSER}
+                WWWGROUP: ${WWWGROUP}
+        restart: always
+        working_dir: /var/www
+        volumes:
+            - .:/var/www:cached
+            - ./docker/php/supervisord.conf:/etc/supervisord.conf
+            - ./docker/php/supervisor.conf:/etc/supervisor/conf.d/supervisor.conf
+        depends_on:
+            - postgres
+            - redis
+
+    caddy:
+        image: caddy:${CADDY_VERSION:-2}-alpine
+        restart: always
+        ports:
+            - "80:80"
+        volumes:
+            - .:/var/www
+            - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+        depends_on:
+            - app
+
+    postgres:
+        image: postgres:${POSTGRES_VERSION:-18}-alpine
+        restart: always
+        environment:
+            POSTGRES_DB: ${DB_DATABASE}
+            POSTGRES_USER: ${DB_USERNAME}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - pg_data:/var/lib/postgresql
+
+    redis:
+        image: redis:${REDIS_VERSION:-7}-alpine
+        restart: always
+        volumes:
+            - redis_data:/data
+
+volumes:
+    pg_data:
+    redis_data:

@@ -1,0 +1,21 @@
+:80 {
+    root * /var/www/public
+    encode zstd gzip
+
+    # CORS for the API and the OpenAPI JSON so the Stoplight "Try It" works
+    header /api/* {
+        Access-Control-Allow-Origin "*"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+        Access-Control-Allow-Headers "Content-Type, Authorization, Accept, X-Requested-With"
+        Vary "Origin"
+    }
+
+    @apiOptions {
+        method OPTIONS
+        path /api/*
+    }
+    respond @apiOptions 204
+
+    php_fastcgi app:9000
+    file_server
+}

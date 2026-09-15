@@ -1,0 +1,21 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DummyNamespace;
+
+use OpenApi\Attributes as OA;
+
+/**
+ * OpenAPI documentation for DummyClass.
+ */
+#[OA\Schema]
+final class DummyClass
+{
+    /**
+     * Private constructor — doc classes are never instantiated.
+     */
+    private function __construct()
+    {
+    }
+}

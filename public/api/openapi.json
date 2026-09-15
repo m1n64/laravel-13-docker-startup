@@ -1,0 +1,63 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Laravel 13 API",
+        "description": "API documentation for the Laravel 13 Clean Architecture template.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost",
+            "description": "Local development server"
+        }
+    ],
+    "paths": {
+        "/api/ping": {
+            "get": {
+                "tags": [
+                    "System"
+                ],
+                "summary": "OpenAPI documentation for GET /api/ping.",
+                "description": "Health check endpoint.",
+                "operationId": "ping",
+                "responses": {
+                    "200": {
+                        "description": "Pong response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PingResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "PingResponse": {
+                "description": "Ping response payload.",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "pong"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2026-09-15T14:48:00+00:00"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "System",
+            "description": "System"
+        }
+    ]
+}

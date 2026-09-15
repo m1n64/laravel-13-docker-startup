@@ -1,0 +1,18 @@
+{
+    "name": "package/laravel-generators",
+    "description": "Clean Architecture-aware code generators for Laravel 13.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "require": {
+        "php": "^8.5",
+        "laravel/framework": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Package\\LaravelGenerators\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
