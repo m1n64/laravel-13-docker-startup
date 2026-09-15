@@ -2,6 +2,8 @@
 
 A Docker-based project template for **Laravel 13** with **PHP 8.5**, built around **Clean Architecture** and strict coding standards.
 
+> This template is best suited for **API-first projects** and **microservices** where a clean, layered architecture and enterprise-grade coding standards are a good fit.
+
 ## Stack
 
 - **PHP 8.5** (FPM on Alpine)
