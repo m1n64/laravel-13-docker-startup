@@ -1,8 +1,13 @@
+![PHP 8.5](https://img.shields.io/badge/PHP-8.5-777BB4?logo=php)
+![Laravel 13](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Clean Architecture](https://img.shields.io/badge/Architecture-Clean-blue)
+
 # Laravel 13 Docker Startup
 
 A Docker-based project template for **Laravel 13** with **PHP 8.5**, built around **Clean Architecture** and strict coding standards.
 
-> This template is best suited for **API-first projects** and **microservices** where a clean, layered architecture and enterprise-grade coding standards are a good fit.
+> This template is best suited for **API-first projects** and **microservices** or **package-like-module monolith** where a clean, layered architecture and enterprise-grade coding standards are a good fit.
 
 ## Stack
 
@@ -15,6 +20,10 @@ A Docker-based project template for **Laravel 13** with **PHP 8.5**, built aroun
 - **Supervisor** for queues and scheduler
 - **Docker + Docker Compose**
 - **Xdebug** in dev mode
+
+## Philosophy
+
+This template embraces explicit, strictly typed, and highly testable code. It is purpose-built for API-first architectures and microservices, prioritizing long-term maintainability, clear separation of concerns, and predictable data flow.
 
 ## Architecture
 
